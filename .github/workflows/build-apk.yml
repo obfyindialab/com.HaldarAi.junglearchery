@@ -60,8 +60,10 @@ jobs:
 
       - name: Create temporary keystores
         env:
+          KEY_PASSWORD: ${{ secrets.KEY_PASSWORD || secrets.KEYPASSWORD }}
           KEYPASSWORD: ${{ secrets.KEYPASSWORD }}
         run: |
+          PASS="${KEY_PASSWORD:-$KEYPASSWORD}"
           if [ -f "./debug.keystore" ]; then
             echo "./debug.keystore already exists."
           else
@@ -81,7 +83,7 @@ jobs:
           if [ -f "./my-upload-key.jks" ]; then
             echo "Found ./my-upload-key.jks in root directory for release signing."
             # Detect key alias from the keystore if available
-            ALIAS_DETECTED=$(keytool -list -v -keystore ./my-upload-key.jks -storepass "$KEYPASSWORD" 2>/dev/null | grep -i "Alias name:" | head -n 1 | awk '{print $NF}' || true)
+            ALIAS_DETECTED=$(keytool -list -v -keystore ./my-upload-key.jks -storepass "$PASS" 2>/dev/null | grep -i "Alias name:" | head -n 1 | awk '{print $NF}' || true)
             if [ -n "$ALIAS_DETECTED" ]; then
               echo "Detected key alias: $ALIAS_DETECTED"
               echo "KEYALIAS=$ALIAS_DETECTED" >> "$GITHUB_ENV"
@@ -99,11 +101,13 @@ jobs:
 
       - name: Build Debug and Release APKs
         env:
+          KEY_PASSWORD: ${{ secrets.KEY_PASSWORD || secrets.KEYPASSWORD }}
           KEYPASSWORD: ${{ secrets.KEYPASSWORD }}
         run: |
+          PASS="${KEY_PASSWORD:-$KEYPASSWORD}"
           RELEASE_KEY_OPTS=""
-          if [ -n "$KEYPASSWORD" ]; then
-            RELEASE_KEY_OPTS="-PRELEASE_STORE_FILE=../my-upload-key.jks -PRELEASE_STORE_PASSWORD=$KEYPASSWORD -PRELEASE_KEY_PASSWORD=$KEYPASSWORD"
+          if [ -n "$PASS" ]; then
+            RELEASE_KEY_OPTS="-PRELEASE_STORE_FILE=../my-upload-key.jks -PRELEASE_STORE_PASSWORD=$PASS -PRELEASE_KEY_PASSWORD=$PASS"
             if [ -n "$KEYALIAS" ]; then
               RELEASE_KEY_OPTS="$RELEASE_KEY_OPTS -PRELEASE_KEY_ALIAS=$KEYALIAS"
             fi
