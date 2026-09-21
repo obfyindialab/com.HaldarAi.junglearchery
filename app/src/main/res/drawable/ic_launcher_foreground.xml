@@ -1,0 +1,298 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- ==================== OUTER AMBIENT GLOW ==================== -->
+    <path
+        android:fillColor="#2200E676"
+        android:pathData="M30,24 C54,20 78,24 82,48 C86,72 74,84 54,84 C34,84 22,72 26,48 Z" />
+
+    <!-- ==================== JUNGLE MONSTERA LEAVES ==================== -->
+    <!-- Left Monstera Leaf 1 (Top) -->
+    <path
+        android:fillColor="#2E7D32"
+        android:pathData="M23,49 C18,43 20,34 27,33 C33,32 37,38 35,45 C32,44 29,46 29,48 C26,47 24,48 23,49 Z" />
+    <path
+        android:fillColor="#4CAF50"
+        android:pathData="M24,51 C17,45 19,36 26,35 C31,34 35,39 34,46 C32,45 29,47 28,49 C26,48 25,49 24,51 Z" />
+    <!-- Left Leaf Cutouts / Veins -->
+    <path
+        android:fillColor="#1B5E20"
+        android:pathData="M27,35 C29,38 30,42 32,45 M23,42 C26,43 28,44 30,44"
+        android:strokeWidth="0.8"
+        android:strokeColor="#1B5E20" />
+
+    <!-- Left Monstera Leaf 2 (Bottom) -->
+    <path
+        android:fillColor="#2E7D32"
+        android:pathData="M21,60 C15,58 15,69 22,74 C28,78 35,74 34,67 C30,68 28,66 27,64 C24,65 22,63 21,60 Z" />
+    <path
+        android:fillColor="#4CAF50"
+        android:pathData="M22,61 C17,59 17,68 23,73 C28,77 34,73 33,67 C30,67 28,65 27,63 C25,64 23,62 22,61 Z" />
+    <!-- Left Leaf Highlight -->
+    <path
+        android:fillColor="#81C784"
+        android:pathData="M25,68 C27,70 30,71 31,69"
+        android:strokeWidth="0.8"
+        android:strokeColor="#81C784" />
+
+    <!-- Right Monstera Leaf 1 (Top) -->
+    <path
+        android:fillColor="#2E7D32"
+        android:pathData="M85,49 C90,43 88,34 81,33 C75,32 71,38 73,45 C76,44 79,46 79,48 C82,47 84,48 85,49 Z" />
+    <path
+        android:fillColor="#4CAF50"
+        android:pathData="M84,51 C91,45 89,36 82,35 C77,34 73,39 74,46 C76,45 79,47 80,49 C82,48 83,49 84,51 Z" />
+    <!-- Right Leaf Cutouts / Veins -->
+    <path
+        android:fillColor="#1B5E20"
+        android:pathData="M81,35 C79,38 78,42 76,45 M85,42 C82,43 80,44 78,44"
+        android:strokeWidth="0.8"
+        android:strokeColor="#1B5E20" />
+
+    <!-- Right Monstera Leaf 2 (Bottom) -->
+    <path
+        android:fillColor="#2E7D32"
+        android:pathData="M87,60 C93,58 93,69 86,74 C80,78 73,74 74,67 C78,68 80,66 81,64 C84,65 86,63 87,60 Z" />
+    <path
+        android:fillColor="#4CAF50"
+        android:pathData="M86,61 C91,59 91,68 85,73 C80,77 74,73 75,67 C78,67 80,65 81,63 C83,64 85,62 86,61 Z" />
+    <!-- Right Leaf Highlight -->
+    <path
+        android:fillColor="#81C784"
+        android:pathData="M83,68 C81,70 78,71 77,69"
+        android:strokeWidth="0.8"
+        android:strokeColor="#81C784" />
+
+    <!-- ==================== RUSTIC WOODEN SHIELD / BOARD ==================== -->
+    <!-- Wood Shield Outer Border / Shadow -->
+    <path
+        android:fillColor="#260C0C"
+        android:pathData="M31,27 C42,24 66,24 77,27 C80,43 80,63 77,77 C66,80 42,80 31,77 C28,63 28,43 31,27 Z" />
+
+    <!-- Wood Shield Body with Vertical Gradient -->
+    <path
+        android:pathData="M32,28 C43,25 65,25 76,28 C79,43 79,62 76,76 C65,79 43,79 32,76 C29,62 29,43 32,28 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:startX="54"
+                android:startY="25"
+                android:endX="54"
+                android:endY="79"
+                android:type="linear">
+                <item android:color="#F57C00" android:offset="0.0" />
+                <item android:color="#E65100" android:offset="0.25" />
+                <item android:color="#BF360C" android:offset="0.6" />
+                <item android:color="#4A121A" android:offset="1.0" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- Wood Texture Details & Cracks -->
+    <!-- Top-left wood notch -->
+    <path
+        android:fillColor="#FFA726"
+        android:pathData="M44,26.5 L46,29 L48,26.5 Z" />
+    <path
+        android:fillColor="#260C0C"
+        android:pathData="M32,38 L35,39 L32,41 Z" />
+    <!-- Bottom-right wood crack -->
+    <path
+        android:fillColor="#260C0C"
+        android:pathData="M76,68 L73,70 L76,71 Z" />
+    <!-- Wood Plank Vertical Seam Lines -->
+    <path
+        android:pathData="M43,27 C42,42 42,62 44,77"
+        android:strokeWidth="0.8"
+        android:strokeColor="#22000000" />
+    <path
+        android:pathData="M65,27 C66,42 66,62 64,77"
+        android:strokeWidth="0.8"
+        android:strokeColor="#22000000" />
+
+    <!-- ==================== GREEN DIAMOND EMBLEM ==================== -->
+    <!-- Diamond Outer Glow / Border -->
+    <path
+        android:fillColor="#1B5E20"
+        android:pathData="M54,26 L77,47 L54,69 L31,47 Z" />
+    <!-- Diamond White Outline -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M54,27.5 L75.5,47 L54,67.5 L32.5,47 Z" />
+    <!-- Diamond Green Body -->
+    <path
+        android:pathData="M54,29.5 L73,47 L54,65.5 L35,47 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:startX="54"
+                android:startY="29"
+                android:endX="54"
+                android:endY="66"
+                android:type="linear">
+                <item android:color="#00E676" android:offset="0.0" />
+                <item android:color="#00C853" android:offset="0.4" />
+                <item android:color="#1B5E20" android:offset="1.0" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- Bottom White Star on Green Diamond -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M54,61.2 L54.7,62.8 L56.4,62.9 L55.1,64 L55.5,65.7 L54,64.8 L52.5,65.7 L52.9,64 L51.6,62.9 L53.3,62.8 Z" />
+
+    <!-- ==================== ARCHERY TARGET ==================== -->
+    <!-- Outer Dark Rim -->
+    <path
+        android:fillColor="#1A2421"
+        android:pathData="M52,43 m-14,0 a14,13 0 1,0 28,0 a14,13 0 1,0 -28,0" />
+    <!-- White Ring 1 -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M52,43 m-12.5,0 a12.5,11.5 0 1,0 25,0 a12.5,11.5 0 1,0 -25,0" />
+    <!-- Target Notch Marks -->
+    <path
+        android:fillColor="#212121"
+        android:pathData="M39.5,42.5 h2 v1 h-2z M62.5,42.5 h2 v1 h-2z M51.5,31 v2 h1 v-2z" />
+    <!-- Magenta / Pink Ring 2 -->
+    <path
+        android:fillColor="#E91E63"
+        android:pathData="M52,43 m-9.8,0 a9.8,9 0 1,0 19.6,0 a9.8,9 0 1,0 -19.6,0" />
+    <!-- White Ring 3 -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M52,43 m-7,0 a7,6.4 0 1,0 14,0 a7,6.4 0 1,0 -14,0" />
+    <!-- Pink Bullseye -->
+    <path
+        android:fillColor="#D81B60"
+        android:pathData="M52,43 m-4.2,0 a4.2,3.8 0 1,0 8.4,0 a4.2,3.8 0 1,0 -8.4,0" />
+    <!-- Center Target Dot -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M52,43 m-1.2,0 a1.2,1.1 0 1,0 2.4,0 a1.2,1.1 0 1,0 -2.4,0" />
+
+    <!-- ==================== THREE ARROWS STUCK IN BULLSEYE ==================== -->
+    <!-- Arrow 1 (Top Arrow) -->
+    <!-- Green Shaft with Dark Outline -->
+    <path
+        android:pathData="M52.5,41.5 L67.5,31.5"
+        android:strokeWidth="1.8"
+        android:strokeColor="#111111"
+        android:strokeLineCap="round" />
+    <path
+        android:pathData="M52.5,41.5 L67.5,31.5"
+        android:strokeWidth="1.1"
+        android:strokeColor="#76FF03"
+        android:strokeLineCap="round" />
+    <!-- Pink Feathers / Fletching 1 -->
+    <path
+        android:fillColor="#FF4081"
+        android:pathData="M64,34 L68.5,31 L69,32.5 L65.5,35 Z" />
+    <path
+        android:fillColor="#EC407A"
+        android:pathData="M65.5,33 L70,30 L70.5,31.5 L67,34 Z" />
+
+    <!-- Arrow 2 (Middle Arrow) -->
+    <!-- Green Shaft with Dark Outline -->
+    <path
+        android:pathData="M51.5,43 L69.5,36.5"
+        android:strokeWidth="1.8"
+        android:strokeColor="#111111"
+        android:strokeLineCap="round" />
+    <path
+        android:pathData="M51.5,43 L69.5,36.5"
+        android:strokeWidth="1.1"
+        android:strokeColor="#76FF03"
+        android:strokeLineCap="round" />
+    <!-- Pink Feathers / Fletching 2 -->
+    <path
+        android:fillColor="#FF4081"
+        android:pathData="M66,38 L71,36 L71.5,37.5 L67.5,39.5 Z" />
+    <path
+        android:fillColor="#EC407A"
+        android:pathData="M67.5,37.5 L72.5,35.5 L73,37 L69,39 Z" />
+
+    <!-- Arrow 3 (Bottom Arrow) -->
+    <!-- Green Shaft with Dark Outline -->
+    <path
+        android:pathData="M52.5,44.5 L70,43"
+        android:strokeWidth="1.8"
+        android:strokeColor="#111111"
+        android:strokeLineCap="round" />
+    <path
+        android:pathData="M52.5,44.5 L70,43"
+        android:strokeWidth="1.1"
+        android:strokeColor="#76FF03"
+        android:strokeLineCap="round" />
+    <!-- Pink Feathers / Fletching 3 -->
+    <path
+        android:fillColor="#FF4081"
+        android:pathData="M66,43.5 L71.5,43 L71.5,44.5 L67,45 Z" />
+    <path
+        android:fillColor="#EC407A"
+        android:pathData="M67.5,42.5 L73,42 L73,43.5 L68.5,44 Z" />
+
+    <!-- Arrow Impact Shadow at Bullseye -->
+    <path
+        android:fillColor="#88000000"
+        android:pathData="M52,43 m-2,0 a2,1.8 0 1,0 4,0 a2,1.8 0 1,0 -4,0" />
+
+    <!-- ==================== "ARCHERY" BANNER ==================== -->
+    <!-- Outer Banner White Trim -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M33.5,50 C44,48 64,48 74.5,50 L75,64.5 C64,62.5 44,62.5 33,64.5 Z" />
+
+    <!-- Banner Black Body -->
+    <path
+        android:fillColor="#0D1612"
+        android:pathData="M34.5,51 C44.5,49.2 63.5,49.2 73.5,51 L73.8,63.2 C63.5,61.4 44.5,61.4 34.2,63.2 Z" />
+
+    <!-- Banner Inner Trim Line -->
+    <path
+        android:pathData="M35.5,52 C45,50.5 63,50.5 72.5,52 M35.2,62 C45,60.5 63,60.5 72.8,62"
+        android:strokeWidth="0.5"
+        android:strokeColor="#44FFFFFF" />
+
+    <!-- ==================== "ARCHERY" TYPOGRAPHY ==================== -->
+    <!-- Vector stylized bold letters matching the badge arcade font -->
+
+    <!-- Letter 'A' -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M37.5,60.8 L39.6,52.6 L41.6,60.8 L40.3,60.8 L39.9,59.1 L39.1,59.1 L38.7,60.8 Z M39.3,58 L39.7,58 L39.5,54.8 Z" />
+
+    <!-- Letter 'R' -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M42.3,52.6 L44.8,52.6 C45.8,52.6 46.4,53.2 46.4,54.2 C46.4,55 45.9,55.5 45.2,55.7 L46.6,60.8 L45.2,60.8 L44,56.2 L43.5,56.2 L43.5,60.8 L42.3,60.8 Z M43.5,55.1 L44.6,55.1 C45,55.1 45.2,54.8 45.2,54.3 C45.2,53.8 45,53.6 44.6,53.6 L43.5,53.6 Z" />
+
+    <!-- Letter 'C' -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M50.4,54.2 L49.3,54.7 C49,53.9 48.4,53.5 47.7,53.5 C46.6,53.5 45.9,54.5 45.9,56.7 C45.9,58.8 46.6,59.8 47.7,59.8 C48.4,59.8 49,59.4 49.3,58.6 L50.4,59.1 C49.9,60.2 49,60.9 47.7,60.9 C45.8,60.9 44.6,59.3 44.6,56.7 C44.6,54.1 45.8,52.5 47.7,52.5 C49,52.5 49.9,53.1 50.4,54.2 Z" />
+
+    <!-- Letter 'H' -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M51.2,52.6 L52.4,52.6 L52.4,55.9 L54.6,55.9 L54.6,52.6 L55.8,52.6 L55.8,60.8 L54.6,60.8 L54.6,57 L52.4,57 L52.4,60.8 L51.2,60.8 Z" />
+
+    <!-- Letter 'E' -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M56.8,52.6 L60.2,52.6 L60.2,53.7 L58,53.7 L58,55.9 L59.9,55.9 L59.9,57 L58,57 L58,59.7 L60.3,59.7 L60.3,60.8 L56.8,60.8 Z" />
+
+    <!-- Letter 'R' -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M61.2,52.6 L63.7,52.6 C64.7,52.6 65.3,53.2 65.3,54.2 C65.3,55 64.8,55.5 64.1,55.7 L65.5,60.8 L64.1,60.8 L62.9,56.2 L62.4,56.2 L62.4,60.8 L61.2,60.8 Z M62.4,55.1 L63.5,55.1 C63.9,55.1 64.1,54.8 64.1,54.3 C64.1,53.8 63.9,53.6 63.5,53.6 L62.4,53.6 Z" />
+
+    <!-- Letter 'Y' -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M65.8,52.6 L67.3,52.6 L68.5,56.3 L69.7,52.6 L71.2,52.6 L69.2,57 L69.2,60.8 L67.8,60.8 L67.8,57 Z" />
+
+</vector>

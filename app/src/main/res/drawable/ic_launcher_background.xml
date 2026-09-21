@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Deep jungle emerald gradient background -->
+    <path
+        android:pathData="M0,0h108v108h-108z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:startX="0"
+                android:startY="0"
+                android:endX="108"
+                android:endY="108"
+                android:type="linear">
+                <item android:color="#0F381E" android:offset="0.0" />
+                <item android:color="#145A32" android:offset="0.5" />
+                <item android:color="#0B2E18" android:offset="1.0" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- Subtle jungle foliage background shapes for depth -->
+    <path
+        android:fillColor="#0AFFFFFF"
+        android:pathData="M0,108 C20,85 45,75 75,80 C95,83 105,95 108,108 Z" />
+    <path
+        android:fillColor="#08FFFFFF"
+        android:pathData="M0,0 C30,15 50,40 55,75 C25,65 5,40 0,0 Z" />
+    <path
+        android:fillColor="#0DFFFFFF"
+        android:pathData="M108,0 C85,25 70,55 75,90 C95,65 105,35 108,0 Z" />
+</vector>

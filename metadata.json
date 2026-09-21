@@ -1,0 +1,6 @@
+{
+  "name": "Junglearchery",
+  "description": "Jungle Archery web game optimized for mobile and tablet devices with full screen immersive experience and sound support.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
