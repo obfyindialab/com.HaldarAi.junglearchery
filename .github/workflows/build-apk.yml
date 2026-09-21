@@ -59,8 +59,9 @@ jobs:
           gradle-version: '9.3.1'
 
       - name: Create temporary keystores
+        env:
+          KEYPASSWORD: ${{ secrets.KEYPASSWORD }}
         run: |
-          # Ensure debug keystore is present
           if [ -f "./debug.keystore" ]; then
             echo "./debug.keystore already exists."
           else
@@ -76,21 +77,38 @@ jobs:
               -dname "CN=Android Debug,O=Android,C=US"
           fi
 
-          # Ensure release keystore is present (uses existing debug key as fallback for CI if release is missing)
-          if [ ! -f "./release.keystore" ]; then
-            echo "Copying ./debug.keystore to ./release.keystore for CI signing..."
-            cp ./debug.keystore ./release.keystore
+          # Configure keystore for assembleRelease
+          if [ -f "./my-upload-key.jks" ]; then
+            echo "Found ./my-upload-key.jks in root directory for release signing."
+            # Detect key alias from the keystore if available
+            ALIAS_DETECTED=$(keytool -list -v -keystore ./my-upload-key.jks -storepass "$KEYPASSWORD" 2>/dev/null | grep -i "Alias name:" | head -n 1 | awk '{print $NF}' || true)
+            if [ -n "$ALIAS_DETECTED" ]; then
+              echo "Detected key alias: $ALIAS_DETECTED"
+              echo "KEYALIAS=$ALIAS_DETECTED" >> "$GITHUB_ENV"
+            fi
+          else
+            echo "Notice: ./my-upload-key.jks not found directly; fallback to ./debug.keystore for release signing."
+            cp ./debug.keystore ./my-upload-key.jks
           fi
 
           if [ ! -f "./debug.keystore" ]; then
             echo "ERROR: ./debug.keystore not found after creation."
             exit 1
           fi
-          echo "Keystores verified."
+          echo "Keystores prepared and verified."
 
       - name: Build Debug and Release APKs
+        env:
+          KEYPASSWORD: ${{ secrets.KEYPASSWORD }}
         run: |
-          gradle :app:assembleDebug :app:assembleRelease --stacktrace --no-daemon
+          RELEASE_KEY_OPTS=""
+          if [ -n "$KEYPASSWORD" ]; then
+            RELEASE_KEY_OPTS="-PRELEASE_STORE_FILE=../my-upload-key.jks -PRELEASE_STORE_PASSWORD=$KEYPASSWORD -PRELEASE_KEY_PASSWORD=$KEYPASSWORD"
+            if [ -n "$KEYALIAS" ]; then
+              RELEASE_KEY_OPTS="$RELEASE_KEY_OPTS -PRELEASE_KEY_ALIAS=$KEYALIAS"
+            fi
+          fi
+          gradle :app:assembleDebug :app:assembleRelease $RELEASE_KEY_OPTS --stacktrace --no-daemon
 
       - name: Verify APKs
         run: |
@@ -151,7 +169,7 @@ jobs:
           # 3. Source code ZIP archive
           SRC_ZIP_NAME="${SAFE_REPO_NAME}-source-code-build-${{ github.run_number }}.zip"
           SRC_ZIP_PATH="${TEMP_DIR}/${SRC_ZIP_NAME}"
-          zip -r "$SRC_ZIP_PATH" . -x "*.git*" -x "*build/*" -x "*.gradle/*" -x "*debug.keystore*" -x "*release.keystore*"
+          zip -r "$SRC_ZIP_PATH" . -x "*.git*" -x "*build/*" -x "*.gradle/*" -x "*debug.keystore*" -x "*release.keystore*" -x "*my-upload-key.jks*"
 
           echo "release_apk_path=${RELEASE_ASSET_PATH}" >> "$GITHUB_OUTPUT"
           echo "debug_apk_path=${DEBUG_ASSET_PATH}" >> "$GITHUB_OUTPUT"
@@ -186,7 +204,7 @@ jobs:
 
           NOTES=$(cat << 'EOF'
           ## APK Build & Release Notes
-          - **Release APK**: Production-optimized APK with minification and resource shrinking.
+          - **Release APK**: Production-optimized APK with minification and resource shrinking, signed with upload keystore.
           - **Debug APK**: Unobfuscated testing APK.
           - **Source Code Archive**: Included as a standalone zip asset alongside GitHub's automatic tar/zip archives.
           - Built by GitHub Actions (Run #${{ github.run_number }}, Attempt #${{ github.run_attempt }}).
