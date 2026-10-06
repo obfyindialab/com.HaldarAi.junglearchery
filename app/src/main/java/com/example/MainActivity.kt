@@ -93,6 +93,9 @@ class MainActivity : ComponentActivity() {
     enableEdgeToEdge()
     setupImmersiveFullScreen()
 
+    // Explicitly disable debugging mode for web contents
+    WebView.setWebContentsDebuggingEnabled(false)
+
     // Route hardware volume keys to media/game audio stream
     volumeControlStream = AudioManager.STREAM_MUSIC
 
